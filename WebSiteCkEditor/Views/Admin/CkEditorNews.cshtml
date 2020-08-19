@@ -1,0 +1,123 @@
+﻿@using WebSiteCkEditor.Models;
+@model AdminNewModel
+@{
+    ViewBag.Title = "CkEditorNews";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<div class="col-lg-12" style="background-color:white; border-radius:10px; padding:30px;">
+    <h1 style="height:40px;">Добавить новости</h1>
+    <div class="row">
+
+        <div class="col-lg-12">
+            <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+            <script src="~/Scripts/ckfinder/ckfinder.js"></script>
+            @*<script src="//cdn.ckeditor.com/4.5.1/standard-all/ckeditor.js"></script>*@
+
+            <div>
+                @using (Html.BeginForm("CkEditorNews", "Admin", FormMethod.Post))
+                {
+                    <input type="hidden" name="NewsId" value="@Model.NewsID" />
+                    <div style="margin-bottom:10px;">
+
+                        <label for="usr">Тип:</label>
+                        <select class="form-control" style="border-radius:6px;" name="NewTypesID">
+
+                            @foreach (var item in Model.lst_newtypes)
+                            {
+                                <option value="@item.Id" style="color:black;">@item.TypeName</option>
+                            }
+                        </select>
+
+
+                    </div>
+                    <div style="margin-bottom:10px;">
+                        <label for="usr">Язык:</label>
+                        <select class="form-control" style="border-radius:6px;" name="LangID">
+
+                            @foreach (var item in Model.lst_lang)
+                            {
+                                <option value="@item.Id" style="color:black;">@item.LangName</option>
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom:10px;">
+                        <label for="usr">Тема:</label>
+                        <input type="text" required class="form-control" style="border-radius:6px;" name="Title" value="@Model.news.Title">
+                    </div>
+                    <div class="form-group" style="margin-bottom:10px;">
+                        <label for="usr">Описание:</label>
+                        <input type="text" required class="form-control" style="border-radius:6px;" name="Desc" value="@Model.news.Desc">
+                    </div>
+                    <div class="form-group" style="margin-bottom:10px;  max-width:265px;">
+                        <label for="usr">Выбрать Фото:</label>
+                        <div class="form-group">
+                            <input type="text" size="48" name="PhotoUrl" id="url" class="form-control" value="@Model.news.PhotoUrl" style="border-radius:6px;" />
+                            <button class="btn btn-primary" style="margin-bottom:5px; margin-top:5px;" onclick="openPopup()" type="button">Select file</button>
+                        </div>
+                    </div>
+                    <div>
+                        <textarea id="Content" name="Content"></textarea>
+                    </div>
+                    <div>
+                        @if (Model.news.Id != 0)
+                        {
+                            <input type="hidden" name="Id" value="@Model.news.Id" />
+                            <input style="margin-top:10px;" class="btn btn-primary" type="submit" value="Изменить" />
+                        }
+                        else
+                        {
+
+                            <input style="margin-top:10px;" class="btn btn-primary" type="submit" value="Добавить" />
+                        }
+
+
+                    </div>
+                }
+            </div>
+        </div>
+        @using System.Web.Script.Serialization
+        @helper Encode(object obj)
+        {
+            @(new HtmlString(new JavaScriptSerializer().Serialize(obj)));
+        }
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function (event) {
+
+                CKEDITOR.timestamp = "v-2";
+              
+                   
+                    var content = @Encode(Model.news.Content);
+                
+                    var editor = CKEDITOR.replace('Content').setData(content);
+
+
+                    CKFinder.setupCKEditor(editor);
+                });
+
+        </script>
+        <script>
+            function openPopup() {
+                CKFinder.popup( {
+		chooseFiles: true,
+		width: 800,
+		height: 600,
+		onInit: function( finder ) {
+			finder.on( 'files:choose', function( evt ) {
+				var file = evt.data.files.first();
+				var output = document.getElementById( 'url' );
+				output.value = file.getUrl();
+			} );
+
+			finder.on( 'file:choose:resizedImage', function( evt ) {
+				var output = document.getElementById( 'url' );
+				output.value = evt.data.resizedUrl;
+			} );
+		}
+	} );
+            }
+        </script>
+       
+    </div>
+</div>
+

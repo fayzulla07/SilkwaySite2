@@ -1,0 +1,27 @@
+﻿@using WebSiteCkEditor.Models;
+@model ClientModel
+@{
+    ViewBag.Title = Model.lst_pages.FirstOrDefault().Title;
+    var routeValues = this.ViewContext.RouteData.Values;
+    var lang = routeValues["controller"] as string;
+}
+
+<div style="width:100%;background:white;height:120%;margin-top:-19px;padding:30px;">
+
+    <div style="min-height:650px;width:1240px;margin:20px auto;">
+        <section>
+            <div class="main-size">
+                <div class="content">
+                    <div class="content-link">
+                        @Html.Partial("~/Views/Part/AdsView.cshtml", Model.lst_newads)
+                    </div>
+                    <div class="content-news">
+                        <h2>@Model.lst_pages.FirstOrDefault().Title</h2>
+                        <br />
+                        @Html.Raw(Model.lst_pages.FirstOrDefault().Content)
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

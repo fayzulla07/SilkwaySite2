@@ -1,0 +1,51 @@
+
+
+.pres-content {
+    max-width: 1250px;
+    width: 100%;
+    min-height: 500px;
+    margin: auto;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.pres-content .img {
+    text-align: center;
+}
+
+.blog h3 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.menu {
+    border-right: 2px dotted #8e1736;
+    padding: 20px 0 10px 0;
+}
+
+.menu h3 {
+    text-align: center;
+    color: #8e1736;
+}
+
+.menu ul {
+    margin-top: 30px;
+}
+
+.menu ul li {
+    padding: 10px 15px;
+}
+
+.blog ol {
+    padding: 25px;
+}
+.blog img{
+    max-width:100%;
+    width:50%;
+}
+.blog p {
+    padding: 10px 15px 0 20px;
+}
+ /*----------------------------*/

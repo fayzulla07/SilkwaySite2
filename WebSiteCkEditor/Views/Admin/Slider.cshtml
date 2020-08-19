@@ -1,0 +1,77 @@
+﻿@using WebSiteCkEditor.Models;
+@model AdminSliderModel
+@{
+    ViewBag.Title = "Pages";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+    //Layout = null;
+}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container-fluid" style="padding:30px; background-color:white; border-radius:10px;">
+    <div class="container-fluid">
+        <h1 style="margin-bottom:30px;">Слайдер</h1>
+        <div class="panel panel-heading">
+            <a href="/Admin/SliderEdit" class="btn btn-outline-primary">Добавить</a>
+        </div>
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th style="width: 30%">Название</th>
+                    <th style="width: 30%">Адрес</th>
+                    <th style="width: 15%">Приоритет</th>
+                    <th style="width: 15%">Изменить</th>
+                    <th style="width: 10%">Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model.lst_slider)
+                {
+                    <tr>
+
+                        <td>@item.Name</td>
+                        <td>@item.UrlAddress</td>
+                        <td>@item.Priority</td>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-around">
+                                @foreach (var lang in Model.lst_lang)
+                                {
+                                    <form action="/Admin/SliderS" method="post">
+                                        <input type="hidden" name="Id" value="@item.Id" />
+                                        <input type="hidden" name="Parent" value="@item.ParentID" />
+                                        <button type="submit" name="LangId" value="@lang.Id" class="btn btn-primary btn-sm">@lang.LangName</button>
+                                    </form>
+                                }
+                            </div>
+
+                        </td>
+                        <td class="text-center">
+                            <form action="/Admin/SliderRemove" method="post">
+                                <button type="submit" name="Id" value="@item.Id" class="btn btn-danger btn-sm">Удалить</button>
+                            </form>
+                        </td>
+
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example').DataTable({
+            responsive: true,
+            "iDisplayLength": 50,
+            "aLengthMenu": [[50, 100, 200], [50, 100, 200, "All"]],
+            "bSort": false
+
+        });
+    });
+
+</script>
+
+@*<script src="~/Scripts/AdminScripts/js/front.js"></script>*@

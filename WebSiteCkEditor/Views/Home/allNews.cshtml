@@ -1,0 +1,51 @@
+﻿@using WebSiteCkEditor.Models;
+@model ClientModel
+@{
+    ViewBag.Title = "";
+    var routeValues = this.ViewContext.RouteData.Values;
+    var lang = routeValues["controller"] as string;
+}
+<div style="width:100%;background:white;height:120%;margin-top:-19px;padding:30px;">
+
+    <div style="min-height:650px;width:1240px;margin:20px auto;">
+        <div class="main-size">
+            <div class="content">
+                <div class="content-link">
+                    @Html.Partial("~/Views/Part/AdsView.cshtml", Model.lst_newads)
+                </div>
+                <div class="content-all" style="margin-left:45px;">
+                    <div style="color: #2c396e; margin-left:30px; margin-bottom: 50px; font-size:45px; font-family:'Times New Roman', Times, serif">@WebSiteCkEditor.Resources.ClientLang.Allnews</div>
+
+                    @foreach (var item in Model.lst_newsv)
+                    {
+                        
+                        <div class="content-news" style="display:grid; grid-template-columns:2fr 3fr;grid-column-gap:50px;margin:0 auto 20px auto">
+                            <div class="news-img" style="">
+                                <img style="max-width:100%" src="@item.PhotoUrl" alt="Alternate Text" />
+                            </div>
+                            <div class="news-tittle" style="margin-top:30px">
+                                <h3 style="color:#8e1736">
+                                    @if (item.ParentID == 0)
+                                    {
+                                        <a href="/@lang/news/@item.Id">@item.Title</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/@lang/news/@item.ParentID">@item.Title</a>
+                                    }
+
+                                </h3>
+                                <br />
+                                <p style="color:#02124d">@item.RegDT.Value.ToString("MMM   dd")</p>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+ 
+</section>

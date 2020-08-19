@@ -1,0 +1,176 @@
+﻿@{
+    string r = Request.RequestContext.RouteData.Values["controller"].ToString();
+
+    string other = Request.RequestContext.RouteData.Values["action"].ToString();
+    if(other.ToLower() == "index")
+    {
+        other = "";
+    }
+    if(Request.RequestContext.RouteData.Values.ContainsKey("id"))
+    {
+        other += "/" + Request.RequestContext.RouteData.Values["id"].ToString();
+    }
+
+    SqlData.SqlGenerator<WebSiteCkEditor.Models.MenuContentV> gen;
+    gen = new SqlData.SqlGenerator<WebSiteCkEditor.Models.MenuContentV>();
+    WebSiteCkEditor.Models.MenuContentV menu = new WebSiteCkEditor.Models.MenuContentV();
+
+    if (!string.IsNullOrEmpty(r))
+    {
+        if (r.ToLower() == "kz" && r.ToLower() == "ru" && r.ToLower() == "en")
+        {
+            menu = gen.GetByAny("Prefix", r).FirstOrDefault();
+        }
+        else
+        {
+            menu = gen.GetByAny("Prefix", "kz").FirstOrDefault();
+        }
+    }
+
+
+}
+<!DOCTYPE html>
+<html lang="@r">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Scripts/1.0.0.0/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/Scripts/1.0.0.0/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="~/Scripts/1.0.0.0/css/index.css">  
+</head>
+
+<body>
+    <header>
+        <div class="main-size">
+            <div class="header">
+                <div class="welcome">
+                    <p>
+                        @WebSiteCkEditor.Resources.ClientLang.Welcome
+                    </p>
+                </div>
+                <div class="langs">
+                    <p>
+                        <a href="/ru/@other" class="langLeft">RU</a>
+                    </p>
+                    <p>
+                        <a href="/kz/@other">KZ</a>
+                    </p>
+                    <p>
+                        <a href="/en/@other">EN</a>
+                    </p>
+                    <form action="/kz/Home/Search" method="post" class="form">
+                        <input name="query" type="search" placeholder="@WebSiteCkEditor.Resources.ClientLang.Searcholder">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+        <div class="logo" id="logo">
+            <a href="/"><img src="~/Scripts/1.0.0.0/img/ru.png" alt=""></a>
+        </div>
+    <div class="header-bottom">
+        <div class="main-size">
+            <nav>
+                <div class="menu-icons">
+                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-times"></i>
+                </div>
+                @*-- Menu --*@
+                <ul class="nav-list">
+                    @Html.Raw(menu.menuContent)
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    @*-- RenderBody() --*@
+
+            @RenderBody()
+
+
+
+
+    <section class="last-section">
+        <div class="main-size">
+            <div class="footer">
+                <div class="history">
+                    <img src="~/Scripts/1.0.0.0/img/silkway ru.png" width="200px" alt="">
+                    <p>
+                        @WebSiteCkEditor.Resources.ClientLang.AboutOur1
+                    </p>
+                </div>
+                <div class="contact">
+                    <h2>
+                        @WebSiteCkEditor.Resources.ClientLang.Contacts
+                    </h2>
+                    <div class="contact-text">
+                        <i class="fa fa-phone-square"></i>
+                        <p>8(7252)537152</p>
+                        <i class="fa fa-phone-square"></i><p>8(7252)537152</p>
+                        <i class="fa fa-envelope-square"></i>
+                        <p>ukpu@mail.ru</p>
+                    </div>
+                </div>
+                <div class="links">
+                    <h2>
+                        @WebSiteCkEditor.Resources.ClientLang.USEFULLINKS
+                    </h2>
+                    <div class="links-area">
+                        <a href="http://192.168.32.102"> @WebSiteCkEditor.Resources.ClientLang.Studentportal</a>
+                        <a href="#">Информация</a>
+                        <a href="#">@WebSiteCkEditor.Resources.ClientLang.Library</a>
+                        <a href="#">@WebSiteCkEditor.Resources.ClientLang.Cooperation</a>
+                        <a href="/@r/rector">@WebSiteCkEditor.Resources.ClientLang.Rectorsblog</a>
+                        <a href="/@r/president">@WebSiteCkEditor.Resources.ClientLang.Presidentsblog</a>
+                    </div>
+                </div>
+                <div class="social">
+                    <h2>
+                        @WebSiteCkEditor.Resources.ClientLang.social
+                    </h2>
+                    <div class="social-block">
+                        <div class="instag">
+                            <a href=""><i class="fa fa-instagram"></i></a>
+                        </div>
+                        <div class="instag">
+                            <a href=""><i class="fa fa-telegram"></i></a>
+                        </div>
+                        <div class="instag">
+                            <a href=""><i class="fa fa-twitter"></i></a>
+                        </div>
+                        <div class="instag">
+                            <a href=""><i class="fa fa-facebook-f"></i></a>
+                        </div>
+                        <div class="instag">
+                            <a href=""><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                        <div class="instag">
+                            <a href=""><i class="fa fa-vk"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="f2m">
+        <div class="main-size">
+            <div class="f2m-about">
+                <p>
+                    Copyright &copy;
+                    @DateTime.Now.Year · Designed & Developed by <a href="#">F2M</a>. All rights reserved
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="~/Scripts/1.0.0.0/slick/slick.min.js"></script>
+    <script src="~/Scripts/1.0.0.0/js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+﻿@using WebSiteCkEditor.Models;
+@model AdminPagesModel
+@{
+    ViewBag.Title = "Menu";
+        Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+<h3>KAZ</h3>
+<form action="/Admin/MenuEdit" method="post">
+    <div class="form-group">
+        <input type="hidden" name="prefix" value="kz" />
+        <input type="hidden" name="id" value="@ViewBag.kaz.Id" />
+        <textarea class="form-control" id="content" name="content" rows="10" >@ViewBag.kaz.menuContent</textarea>
+    </div>
+    <button class="btn btn-success" type="submit">Сохранить</button>
+</form>
+<h3>RUS</h3>
+<form action="/Admin/MenuEdit" method="post">
+    <div class="form-group">
+        <input type="hidden" name="prefix" value="ru" />
+        <input type="hidden" name="id" value="@ViewBag.rus.Id" />
+        <textarea class="form-control" name="content" rows="10">@ViewBag.rus.menuContent</textarea>
+    </div>
+    <button class="btn btn-success" type="submit">Сохранить</button>
+</form>
+
+<h3>ENG</h3>
+<form action="/Admin/MenuEdit" method="post">
+    <div class="form-group">
+        <input type="hidden" name="prefix" value="en" />
+        <input type="hidden" name="id" value="@ViewBag.eng.Id" />
+        <textarea class="form-control" name="content" rows="10">@ViewBag.eng.menuContent</textarea>
+    </div>
+    <button class="btn btn-success" type="submit">Сохранить</button>
+</form>
+

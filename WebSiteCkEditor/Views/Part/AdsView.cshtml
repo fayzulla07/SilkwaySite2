@@ -1,0 +1,35 @@
+﻿
+@using WebSiteCkEditor.Models;
+@model IEnumerable<NewsV>
+
+@{
+    var routeValues = this.ViewContext.RouteData.Values;
+    var lang = routeValues["controller"] as string;
+}
+
+<h2>
+    @WebSiteCkEditor.Resources.ClientLang.ADS
+</h2>
+
+@foreach (var item in Model)
+{
+    <div class="link-inner">
+        <img src="@item.PhotoUrl"  alt="Alternate Text" />
+        <h3>
+            @if (item.ParentID == 0)
+            {
+                <a href="/@lang/AdsLearnMore/@item.Id">@item.Title</a>
+            }
+            else
+            {
+                <a href="/@lang/AdsLearnMore/@item.ParentID">@item.Title</a>
+            }
+
+
+        </h3>
+        <p>
+            @item.RegDT.Value.ToString("MMMM dd, yyyy")
+        </p>
+    </div>
+}
+

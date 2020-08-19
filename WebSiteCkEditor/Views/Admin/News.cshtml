@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Admin/AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+<div class="container-fluid" style="padding:30px; background-color:white; border-radius:10px;">
+    <div class="container-fluid">
+        <h1 style="margin-bottom:30px;">Проекты / Новости / Блог</h1>
+        <div class="panel panel-heading">
+            <a href="/Admin/CkEditorNews" class="btn btn-outline-primary">Добавить</a>
+            <form action="Admin/FilterNews" method="post"></form>
+            <a href="" class="btn btn-outline-success">Все</a>
+            <a href="" class="btn btn-outline-info">Объявления</a>
+            <a href="" class="btn btn-outline-primary">Новости</a>
+            <a href="" class="btn btn-outline-dark">Блог</a>
+
+        </div>
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th style="width: 40%">Тема</th>
+                    <th style="width: 11%">Дата</th>
+                    <th style="width: 12%">Тип</th>
+                    <th style="width: 12%">Изменить</th>
+                    <th style="width: 12%">Посмотреть</th>
+                    <th style="width: 12%">Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+
+               @foreach (var item in ViewBag.NewsTable)
+                {
+                   <tr>
+                    <td>@item.Title</td>
+                    <td>@item.RegDT</td>
+                    @foreach (var itemtype in ViewBag.NType)
+                    {
+                        if (itemtype.Id == item.NewTypesID)
+                        {
+                            <td>@itemtype.TypeName</td>
+                            break;
+                        }
+
+                    }
+                   <td >
+                       <div class="d-flex justify-content-around">
+                           @foreach (var lang in ViewBag.Lan)
+                           {
+                               <form action="/Admin/EditNews" method="post">
+                                   <input type="hidden" name="Id" value="@item.Id" />
+                                   <input type="hidden" name="Parent" value="@item.ParentID" />
+                                   <input type="hidden" name="NewType" value="@item.NewTypesID" />
+                                   <button type="submit" name="LangId" value="@lang.Id" class="btn btn-primary btn-sm">@lang.LangName</button>
+
+                               </form>
+                           }
+                       </div>
+                       </td>
+                   <td>
+                       <div class="d-flex justify-content-around">
+                           @foreach (var lang in ViewBag.Lan)
+                           {
+                               <form action="/" method="post">
+                                   <button type="submit" name="Id" value="@item.Id" class="btn btn-success btn-sm">@lang.LangName</button>
+                               </form>
+                           }
+                       </div>
+                       </td>
+                        <td class="text-center">
+                            <form action="/Admin/DeleteNews" method="post">
+                                <button name="Id" value="@item.Id" class="btn btn-danger btn-sm">Удалить</button>
+                            </form>
+                          
+                        </td>
+                   </tr>
+                }
+
+
+
+
+                </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript">
+     $(document).ready(function() {
+        $('#example').DataTable();
+    });
+
+</script>
+

@@ -1,0 +1,94 @@
+
+a {
+    text-decoration: none;
+    color: #02124d;
+    font-weight: 600;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 40%;
+    height: auto;
+}
+
+.content {
+    max-width: 1250px;
+    min-height: 500px;
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.blog h3 {
+    margin: 30px auto;
+    text-align: center;
+    color: #02124d;
+}
+
+.menu {
+    border-right: 2px dotted #8e1736;
+    padding: 20px 0 10px 0;
+}
+
+.menu h3 {
+    text-align: center;
+    color: #8e1736;
+}
+
+.menu ul {
+    margin-top: 30px;
+}
+
+.menu ul li {
+    padding: 10px 15px;
+}
+
+.form-area {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-label {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.form-label label {
+    color: #02124d;
+    font-weight: 700;
+}
+
+.form-label label span {
+    color: #8e1736;
+    font-size: 19px;
+}
+
+.form-label input {
+    width: 50%;
+    padding: 7px 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    outline: none;
+    border: 2px solid #8e1736;
+    font-size: 17px;
+}
+
+textarea {
+    padding: 10px;
+    width: 50%;
+    border: 2px solid #8e1736;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>F2M.SWIU</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="~/Scripts/AdminScripts/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="~/Scripts/AdminScripts/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <!-- <link rel="stylesheet" href="css/fontastic.css"> -->
+    <link rel="stylesheet" href="~/Scripts/AdminScripts/css/styles1.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="~/Scripts/AdminScripts/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="~/Scripts/AdminScripts/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="~/Scripts/AdminScripts/img/f2mr.png">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <nav class="navbar">
+                <!-- Search Box-->
+                <div class="search-box">
+                    <button class="dismiss"><i class="icon-close"></i></button>
+                    <form id="searchForm" action="#" role="search">
+                        <input type="search" placeholder="What are you looking for..." class="form-control">
+                    </form>
+                </div>
+                <div class="container-fluid">
+                    <div class="navbar-holder d-flex align-items-center justify-content-between">
+                        <!-- Navbar Header-->
+                        <div class="navbar-header">
+                            <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                                <div class="brand-text d-none d-lg-inline-block"><span>F2M. </span><strong>SWIU</strong></div>
+                                <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>F2M</strong></div>
+                            </a>
+                            <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                        </div>
+                        <!-- Navbar Menu -->
+                        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                            <!-- Logout    -->
+                            <li class="nav-item"><a href="/Admin/Logout" class="nav-link logout"> <span class="d-none d-sm-inline">Выйти</span><i class="icon-power-off"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content d-flex align-items-stretch">
+            <nav class="side-navbar">
+                <!-- Sidebar Header-->
+
+                <ul class="list-unstyled">
+                    <li><a href="/Admin/News"> <i class="icon-home"></i>Главная</a></li>
+                    <li><a href="/Admin/News"> <i class="icon-home"></i>Новости</a></li>
+                    <li><a href="/Admin/Pages"> <i class="icon-clock-o"></i>Страницы</a></li>
+                    <li><a href="/Admin/Menu"> <i class="icon-clock-o"></i>Меню</a></li>
+                    <li><a href="/Admin/Slider"> <i class="icon-calendar-check-o"></i>Слайдер</a></li>
+                    <li><a href="/admin/RectorQuestions"> <i class="icon-bookmark-o"></i>Вопросы(Ректор)</a></li>
+                    <li><a href="/admin/PresidentQuestions"> <i class="icon-bars"></i>Вопросы(Президент)</a></li>
+                    <li><a href="#" style="color:red;"> <i class="icon-wrench"></i>Голосования</a></li>
+                </ul>
+            </nav>
+            <div class="content-inner">
+                <header class="mt-3" style="margin:50px;">
+                    <script src="~/Scripts/jquery-3.3.1.js"></script>
+                    @RenderBody()
+                </header>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- JavaScript files-->
+   
+    @*<script src="~/Scripts/AdminScripts/vendor/popper.js/umd/popper.min.js"></script>*@
+    <script src="~/Scripts/AdminScripts/vendor/bootstrap/js/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/AdminScripts/vendor/jquery.cookie/jquery.cookie.js"></script>
+        <script src="~/Scripts/AdminScripts/vendor/chart.js/Chart.min.js"></script>*@
+    @*<script src="~/Scripts/AdminScripts/vendor/jquery-validation/jquery.validate.min.js"></script>*@
+    @*<script src="~/Scripts/AdminScripts/js/charts-home.js"></script>*@
+    <!-- Main File-->
+    <script src="~/Scripts/AdminScripts/js/front.js"></script>
+
+
+
+</body>
+</html>

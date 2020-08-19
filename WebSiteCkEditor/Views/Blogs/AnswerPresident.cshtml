@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebSiteCkEditor.Models.Blogs>
+@{
+    ViewBag.Title = "AnswerPresident";
+    var routeValues = this.ViewContext.RouteData.Values;
+    var lang = routeValues["controller"] as string;
+}
+    <link href="~/Scripts/1.0.0.0/blog/css-blogs/blog.css" rel="stylesheet" />
+    <div style="width:100%;background:white;height:120%;margin-top:-19px;padding:30px;">
+
+        <div style="min-height:650px;width:1240px;margin:20px auto;">
+            <div class="content">
+                <div class="menu">
+                    <h3>@WebSiteCkEditor.Resources.ClientLang.Menu</h3>
+                    <ul>
+                        <li>
+                            <a href="/@lang/president">@WebSiteCkEditor.Resources.ClientLang.Presidentsblog</a>
+                        </li>
+                        <li>
+                            <a href="/@lang/answerpresident">@WebSiteCkEditor.Resources.ClientLang.Questions  </a>
+                        </li>
+                        <li>
+                            <a href="/@lang/askpresident">@WebSiteCkEditor.Resources.ClientLang.AskQuestion</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="blog">
+                    @foreach (var item in Model)
+                    {
+                        <div class="blog-fucking">
+                            <div class="blog-user">
+                                <div class="user-img">
+                                    <img src="http://swiu.kz/assets/images/home-user-icon.png" alt="">
+                                </div>
+                                <div class="user-text">
+                                    <p>@item.RegDT.Value.ToString("MMMM dd, yyyy")</p>
+                                    <h4>
+                                        @item.LastName  @item.FirstName
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="blog-text">
+                                <h4>
+                                    @item.Question
+                                </h4>
+                            </div>
+                            <div class="blog-answer">
+                                <h3>
+                                    &#x21b6;@WebSiteCkEditor.Resources.ClientLang.Answer
+                                </h3>
+                                <br>
+                                <h4>
+                                   @item.Answer
+                                </h4>
+                            </div>
+                        </div>
+                     }
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+

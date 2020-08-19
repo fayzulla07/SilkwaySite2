@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "President";
+        var routeValues = this.ViewContext.RouteData.Values;
+    var lang = routeValues["controller"] as string;
+}
+
+<link rel="stylesheet" href="~/Scripts/1.0.0.0/blog/css-blogs/pres.css">
+
+<div style="width:100%;background:white;height:120%;margin-top:-19px;padding:30px;">
+
+    <div style="min-height:650px;width:1240px;margin:20px auto;">
+        @*------------------------------------------*@
+        <div class="pres-content">
+            <div class="menu">
+                <h3>@WebSiteCkEditor.Resources.ClientLang.Menu</h3>
+                <ul>
+                    <li>
+                        <a href="/@lang/president">@WebSiteCkEditor.Resources.ClientLang.Presidentsblog</a>
+                    </li>
+                    <li>
+                        <a href="/@lang/answerpresident">@WebSiteCkEditor.Resources.ClientLang.Questions  </a>
+                    </li>
+                    <li>
+                        <a href="/@lang/askpresident">@WebSiteCkEditor.Resources.ClientLang.AskQuestion</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="blog">
+                <div class="img">
+                    <img src="~/Scripts/1.0.0.0/blog/img/5d7c92df0ce5d.jpg" alt="">
+                </div>
+                <h3>@WebSiteCkEditor.Resources.ClientLang.Madiyartitle</h3>
+                @if (lang.ToLower() == "kz")
+                {
+                    <P>
+                        1988 жылы 30 наурызда Оңтүстік Қазақстан облысы Шымкент қаласында дүниеге келген.
+                        <br />
+                        Әкесі - Юнусов Бахтияр Саидұлы (1954-2010) - Оңтүстік Қазақстан педагогикалық университетінің тұңғыш президенті және негізін қалаушы, профессор, араб ғалымы, Халықаралық педагогикалық ғылымдар академиясының және Ресейдің жаратылыстану ғылымдары академиясының корреспондент-мүшесі, Панта Египет университетінің құрметті дәрігері «Білім берудің құрметті қызметкері» Қазақстан Республикасы »атты сыйлықтың лауреаты Ж.Алтынсарин <br />
+                        <br />
+                        Анасы - Юнусова Рано, Оңтүстік Қазақстан педагогикалық университетінің негізін қалаушы, Ы.Алтынсарин төсбелгісінің иегері. <br />
+                        <br />
+                        Юнусов М.Б. Мукими атындағы № 13 орта мектепті 2005 жылы бітірген. Биыл мен Оңтүстік Қазақстан педагогикалық университетіне экономика мамандығына түстім. 2009 жылы университетті бакалавр дәрежесімен үздік бітірді. 2009-2011 жылдары магистратураны экономика мамандығы бойынша үздік дипломмен бітірді. «Құқықтану» мамандығы бойынша жоғары білімі бар.
+                        <br />
+                        Юнусов М.Б. Еңбек жолын 2009 жылы әдіскер, тіркеу бөлімінің бастығы ретінде бастаған. 2010 жылы ол ОҚИПУ вице-президенті болды, ал 2012 жылдың 15 мамырында ол ОҚПУ президенті болып сайланды.
+                        <br />
+                        «Нұр Отан» партиясының мүшесі
+                        <br />
+                        Юнусов М.Б. 50-ден астам ғылыми мақалалар мен 8 оқулықтардың авторы.
+                        <br />
+                        Тәрбие мен білім беру саласындағы көрнекті жетістіктері, аймақтағы жоғары білім саласындағы инновациялары үшін келесі марапаттарға ие болды: <br />
+                        <br />
+                        1. Алтынсариннің төсбелгісі және сертификаты (ҚР Білім және ғылым министрлігі, 2013) <br />
+                        2. Алтын медаль және Ресей жаратылыстану ғылымдары академиясының сертификаты (Мәскеу, 2014 ж. Ақпан) <br />
+                        3. Еуропалық интеграцияға қосқан ерекше үлесін ескере отырып, Халықаралық Біріккен Еуропа Марапаты (2011), <br />
+                        4. Юнусов мырзаның ел экономикасын дамытуға қосқан жеке үлесі үшін «Қазақстан экономикасының жылдызы» орденімен марапатталды.
+                        5. «Қызметкерлердің үздік менеджері» деп танылды және Еуропалық Бизнес Ассамблеясының төс белгісімен марапатталды (Сократ комитеті, Оксфорд, Ұлыбритания, 2015) <br />
+                        6. Қазақстан Республикасының ұлттық іскерлік наградалары 5 жыл мерзімге Құрмет грамотасымен марапатталады.
+                        7. «Білім берудің құрметті қызметкері» белгісімен Қазақстан Республикасы Білім және ғылым министрлігінің төсбелгісімен марапатталды (2015) <br />
+                        8. Қазақстан Республикасының Президенті Н.Ә. Назарбаев Қазақстан Республикасы Тәуелсіздігінің 25 жылдығына - 2016 жылғы наурызға арналған «Нұр Отанның» сайлау науқанына белсенді қатысқаны үшін.
+                        9. Қазақстан Республикасы Тәуелсіздігінің 25 жылдығына арналған Құрмет медалі - 2016 жылғы қараша
+                        10. А.Байтұрсынов атындағы алтын мөр. -2017
+                    </P>
+                }
+                else if (lang.ToLower() == "ru")
+                {
+                    <P>
+                        Родился 30 марта 1988 года в Шымкенте Южно-Казахстанской области.
+                        <br />
+                        Отец - Юнусов Бахтияр Саидович (1954-2010) - первый президент и основатель Южно-Казахстанского педагогического университета, профессор, арабский ученый, член-корреспондент Международной академии педагогических наук и Академии естественных наук России, почетный доктор египетского университета "Панта" «Почетный работник образования Республики Казахстан», лауреат премии им. Я. Алтынсарина <br />
+                        <br />
+                        Его мать - Юнусова Раьно, основатель Южно-Казахстанского педагогического университета, лауреат нагрудного знака Ю.Алтынсарина. <br />
+                        <br />
+                        Юнусов М.Б. окончил среднюю школу №13 имени Мукими в 2005 году. В этом году поступил в Южно-Казахстанский педагогический университет по экономике. В 2009 году с отличием окончила университет со степенью бакалавра. В 2009-2011 годах окончил магистратуру по специальности «Экономика» и закончил с отличием. Имеет высшее образование по специальности «Юриспруденция».
+                        <br />
+                        Юнусов М.Б. начал свою профессиональную карьеру в 2009 году в качестве методиста, начальника ЗАГСа. В 2010 году он был вице-президентом SKIPU, а с 15.05.2012 был избран президентом SKPU.
+                        <br />
+                        Участник партии "Нур Отан"
+                        <br />
+                        Юнусов М.Б. Автор более 50 научных статей и 8 учебников.
+                        <br />
+                        Она получила следующие награды за выдающиеся достижения в области воспитания и образования, инноваций в сфере высшего образования в регионе: <br />
+                        <br />
+                        1. Нагрудный знак и сертификат Ю. Алтынсарина (Министерство образования и науки Республики Казахстан, 2013) <br />
+                        2. Золотая медаль и сертификат Российской академии естественных наук (Москва, февраль 2014 г.) <br />
+                        3. Международная премия «Единая Европа» (2011), учитывая ее уникальный вклад в европейскую интеграцию <br />
+                        4. За оценку личного вклада г-на Юнусова в развитие экономики страны он был награжден орденом Звезды экономики Казахстана.
+                        5. Признан «Лучшим менеджером-сотрудником» и награжден значком Европейской бизнес-ассамблеи (Комитет Сократа, Оксфорд, Великобритания, 2015). <br />
+                        6. Национальные деловые награды Республики Казахстан награждаются Почетной грамотой сроком на 5 лет.
+                        7. «Почетный работник образования» награжден значком Министерства образования и науки Республики Казахстан (2015) <br />
+                        8. Благодарственное письмо Президента Республики Казахстан Н.А. Назарбаева за активное участие в предвыборной кампании Нур Отан в честь 25-летия Независимости Республики Казахстан - март 2016 года.
+                        9. Почетная медаль к 25-летию Независимости Республики Казахстан - ноябрь 2016 года
+                        10. Золотая марка имени А. Байтурсынова -2017
+                    </P>
+                }
+                else if (lang.ToLower() == "en")
+                {
+                    <P>
+                        Born March 30, 1988 in Shymkent, South Kazakhstan Region.
+                        <br />
+                        Father - Yunusov Bakhtiyar Saidovich (1954-2010) - the first president and founder of the South Kazakhstan Pedagogical University, professor, Arab scientist, corresponding member of the International Academy of Pedagogical Sciences and the Academy of Natural Sciences of Russia, honorary doctor of the Egyptian University "Panta" "Honorary Worker of Education Republic of Kazakhstan ”, laureate of the prize named after J. Altynsarin <br />
+                        <br />
+                        His mother is Yunusova Rano, founder of the South Kazakhstan Pedagogical University, laureate of the badge Y. Altynsarin. <br />
+                        <br />
+                        Yunusov M.B. graduated from secondary school No. 13 named after Mukimi in 2005. This year I entered the South Kazakhstan Pedagogical University in Economics. In 2009, she graduated with honors from the university with a bachelor's degree. In 2009-2011 he graduated from the magistracy with a degree in Economics and graduated with honors. Has higher education in the specialty "Jurisprudence".
+                        <br />
+                        Yunusov M.B. He began his professional career in 2009 as a methodologist, head of the registry office. In 2010, he was vice president of SKIPU, and on May 15, 2012, he was elected president of SKPU.
+                        <br />
+                        Member of the Nur Otan Party
+                        <br />
+                        Yunusov M.B. The author of more than 50 scientific articles and 8 textbooks.
+                        <br />
+                        She received the following awards for outstanding achievements in the field of upbringing and education, innovations in the field of higher education in the region: <br />
+                        <br />
+                        1. Breastplate and certificate of Yu. Altynsarin (Ministry of Education and Science of the Republic of Kazakhstan, 2013) <br />
+                        2. Gold medal and certificate of the Russian Academy of Natural Sciences (Moscow, February 2014) <br />
+                        3. International United Europe Award (2011), given its unique contribution to European integration <br />
+                        4. For evaluating the personal contribution of Mr. Yunusov to the development of the country's economy, he was awarded the Order of the Star of the Economy of Kazakhstan.
+                        5. Recognized as the “Best Employee Manager” and awarded the badge of the European Business Assembly (Socrates Committee, Oxford, UK, 2015). <br />
+                        6. National business awards of the Republic of Kazakhstan shall be awarded with a Certificate of Honor for a period of 5 years.
+                        7. “Honorary Worker of Education” was awarded the badge of the Ministry of Education and Science of the Republic of Kazakhstan (2015) <br />
+                        8. Letter of thanks of the President of the Republic of Kazakhstan N.A. Nazarbayev for active participation in the election campaign of Nur Otan in honor of the 25th anniversary of Independence of the Republic of Kazakhstan - March 2016.
+                        9. Medal of Honor for the 25th anniversary of Independence of the Republic of Kazakhstan - November 2016
+                        10. Gold stamp named after A. Baitursynov -2017
+                    </P>
+                }
+
+            </div>
+        </div>
+        @*------------------------------------------*@
+    </div>
+</div>
+
+

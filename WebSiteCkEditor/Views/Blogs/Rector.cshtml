@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "President";
+        var routeValues = this.ViewContext.RouteData.Values;
+    var lang = routeValues["controller"] as string;
+}
+
+<link rel="stylesheet" href="~/Scripts/1.0.0.0/blog/css-blogs/pres.css">
+
+<div style="width:100%;background:white;height:120%;margin-top:-19px;padding:30px;">
+
+    <div style="min-height:650px;width:1240px;margin:20px auto;">
+        @*------------------------------------------*@
+        <div class="pres-content">
+            <div class="menu">
+                <h3>@WebSiteCkEditor.Resources.ClientLang.Menu</h3>
+                <ul>
+                    <li>
+                        <a href="/@lang/rector">@WebSiteCkEditor.Resources.ClientLang.Rectorsblog</a>
+                    </li>
+                    <li>
+                        <a href="/@lang/answerrector">@WebSiteCkEditor.Resources.ClientLang.Questions  </a>
+                    </li>
+                    <li>
+                        <a href="/@lang/askrector">@WebSiteCkEditor.Resources.ClientLang.AskQuestion</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="blog">
+                <div class="img">
+                    <img src="~/Scripts/1.0.0.0/blog/img/5d7c92df0ce5d.jpg" alt="">
+                </div>
+                <h3>Ефимова Ирина Евгеньевна</h3>
+                @if (lang.ToLower() == "kz")
+                {
+                    <p>
+                        Университет  ректоры, <br />
+                        <br />
+                        Экономика ғылымдарының кандидаты, доцент. <br />
+                    </p>
+                }
+                    else if (lang.ToLower() == "ru")
+                    {
+            <p>
+                Ректор университета, <br />
+                <br />
+                Кандидат экономических наук, доцент. <br />
+            </p>
+                    }
+                else if (lang.ToLower() == "en")
+                {
+            <p>
+                Rector of the University,<br />
+                <br />
+                Candidate of economic sciences, assistant professor<br />
+            </p>
+                }
+            </div>
+        </div>
+        @*------------------------------------------*@
+    </div>
+</div>
+
+

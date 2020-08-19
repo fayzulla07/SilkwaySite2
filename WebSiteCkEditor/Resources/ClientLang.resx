@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutOur" xml:space="preserve">
+    <value>Біз туралы анықтама!</value>
+  </data>
+  <data name="AboutOur1" xml:space="preserve">
+    <value>SILKWAY негізін салушы және бірінші президенті - Юнусов Бахтияр Саидұлы (1954-2010) - профессор, араб ғалымы, Қазақстан Республикасы Жаратылыстану ғылымдары академиясының және Ресейдің педагогикалық білім беру халықаралық ғылымдар академиясының корреспондент-мүшесі, Египет Араб Республикасы Танта университетінің құрметті докторы , «Қазақстан Республикасының білім беру ісінің құрметті қызметкері», медаль иегері. Ыбырай Алтынсарин.</value>
+  </data>
+  <data name="ADS" xml:space="preserve">
+    <value>ХАБАРЛАНДЫРУ</value>
+  </data>
+  <data name="Allnews" xml:space="preserve">
+    <value>БАРЛЫҚ ЖАҢАЛЫҚТАР</value>
+  </data>
+  <data name="Answer" xml:space="preserve">
+    <value>Жауап</value>
+  </data>
+  <data name="AskQuestion" xml:space="preserve">
+    <value>Сұрақ қою</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>БАЙЛАНЫС</value>
+  </data>
+  <data name="Cooperation" xml:space="preserve">
+    <value>Ынтымақтастық</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Аты</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Тегі</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>Кітапхана</value>
+  </data>
+  <data name="Madiyartext" xml:space="preserve">
+    <value>Оңтүстік Қазақстан облысы, Шымкент қаласында 1988 жылы 30 наурызда дүниеге келген.
+
+Әкесі – Юнусов Бахтияр Саидұлы (1954-2010 жж.) Оңтүстік Қазақстан педагогикалық университетінің алғашқы президенті және негізін қалаушы, профессор, арабтанушы-ғалым, Ресейдегі педагогикалық ғылымдар Халықаралық Академиясының және ҚР жаратылыстану Академиясының корреспондент мүшесі, Араб республикасы Египет «Панта» университетінің құрметті докторы, «ҚР білім саласының құрметті қызметкері», Ы.Алтынсарин атындағы төсбелгісінің иегері.
+
+Анасы – Юнусова Раъно, Оңтүстік Қазақстан педагогикалық университенің құрылтайшысы, Ы.Алтынсарин атындағы төсбелгісінің иегері.
+
+М.Б.Юнусов 2005 жылы №13 Мукими атындағы орта мектепті бітірді. Осы жылы Оңтүстік Қазақстан педагогикалық университетінің экономика мамандығына түсті. 2009 жылы бакалавр дәрежесімен жоғарғы оқу орнын үздік бітіріп шықты. 2009-2011 жылдары «Экономика» мамандығы бойынша магистратурада оқып, үздік тәмамдады. «Құқықтану» мамандығы бойынша жоғары білімі бар.
+
+М.Б.Юнусов кәсіби қызметін 2009 жылы тіркеу офисінің әдіскері, тіркеу-офисінің бастығынан бастады. 2010 жылы ОҚПУ вици-президенті, 15.05.2012 жылдан бастап ОҚПУ президенті болып сайланды.
+
+«Нұр Отан» партиясының мүшесі.
+
+Юнусов М.Б. 50-ден астам ғылыми мақалалар мен 8 оқу құралының авторы.
+
+Болашақ ұрпақты тәрбиелеу мен білім беру қызметіндегі толағай табыстарына, облыстағы жоғары білім берудегі жаңашылдығы үшін мынадай марапаттарға ие:
+
+Ы.Алтынсарин төсбелгісі мен куәлігі (Қазақстан Республикасының Білім және ғылым министрлігі 2013 жыл)
+Ресей жаратылыстану Академиясының алтын медалімен және куәлігімен (Мәскеу қаласы ақпан 2014 жыл)
+Еуропа интеграциясын дамытудағы ерекше еңбегін ескеріп, «Бірлескен Еуропа» Халықаралық мадақтама (2011 жыл)
+Еліміздің экономикасын дамытудағы М.Б.Юнусовтың жеке үлесін бағалау мақсатында «Звезда Славы экономика Казахстана» жеке орденімен марапатталды.
+«Үздік менеджер-қызметкер» ретінде танылып, Еуропалық Бизнес Ассамблеяның төсбелгісімен марапаттлады (Сократ комитеті, Оксфорд, Ұлыбритания 2015 жыл).
+Қазақстан Республикасы Ұлттық бизнес-рейтинг бойынша «5 жылдың Үздік басшысы» сертификатымен марапатталады.
+«Білім беру ісінің құрметті қызметкері» Қазақстан Республикасының Білім және ғылым министрлігінің төсбелгісімен марапатталды (2015 жыл)
+ҚР Тәуелсіздігінің  25 жылдық мерекесіне орай « Нұр Отан» партиясының сайлау компаниясына белсенді қатысқаны үшін ҚР Президенті Н.Ә.Назарбаевтың алғыс хаты –наурыз 2016 ж.
+ҚР Тәуелсіздігінің  25 жылдығына орай мерейлі төс белгі –қараша 2016 ж.
+А.Байтұрсынов атындағы  алтын белгі -2017 ж.</value>
+  </data>
+  <data name="Madiyartitle" xml:space="preserve">
+    <value>Юнусов Мадияр Бахтиярұлы</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Мәзір</value>
+  </data>
+  <data name="Moredetails" xml:space="preserve">
+    <value>Толығырак</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>ЖАҢАЛЫҚТАР</value>
+  </data>
+  <data name="Platonus" xml:space="preserve">
+    <value>Платонус</value>
+  </data>
+  <data name="Presidentsblog" xml:space="preserve">
+    <value>Президент блогы</value>
+  </data>
+  <data name="Question" xml:space="preserve">
+    <value>Сұрақ</value>
+  </data>
+  <data name="Questions" xml:space="preserve">
+    <value>Сұрақтар</value>
+  </data>
+  <data name="Rectorsblog" xml:space="preserve">
+    <value>Ректор блогы</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Іздеу нәтижесі</value>
+  </data>
+  <data name="Searcholder" xml:space="preserve">
+    <value>Іздеу</value>
+  </data>
+  <data name="social" xml:space="preserve">
+    <value>Әлеуметтік желілер</value>
+  </data>
+  <data name="street" xml:space="preserve">
+    <value>Шымкент қ. Тоқаева 27 «А» (А ғимараты)
+уг. Түркістан</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Studentportal" xml:space="preserve">
+    <value>Студенттік портал</value>
+  </data>
+  <data name="Studyingproccess" xml:space="preserve">
+    <value>Оқу процесі</value>
+  </data>
+  <data name="USEFULLINKS" xml:space="preserve">
+    <value>Пайдалы сілтемелер</value>
+  </data>
+  <data name="ValidatePres" xml:space="preserve">
+    <value>Мәнді дұрыс енгізіңіз!</value>
+  </data>
+  <data name="ValidatePres1" xml:space="preserve">
+    <value>Жауабын күтіңіз! Жауап сіздің поштаңызға келеді</value>
+  </data>
+  <data name="ValidatePresRepeat" xml:space="preserve">
+    <value>Тағы да қайталаңыз!</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Біздің сайтқа қош келдіңіз!</value>
+  </data>
+</root>

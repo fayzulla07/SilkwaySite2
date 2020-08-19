@@ -1,0 +1,157 @@
+﻿@using WebSiteCkEditor.Models;
+@model ClientModel
+@{
+    var routeValues = this.ViewContext.RouteData.Values;
+    var lang = routeValues["controller"] as string;
+    
+    if (lang == "ru")
+    {
+        ViewBag.Title = "Международный Университет SILKWAY";
+    }
+    else if (lang == "en")
+    {
+        ViewBag.Title = "SILKWAY International University";
+    }
+    else
+    {
+        ViewBag.Title = "SILKWAY Халықаралық университеті";
+    }
+
+}
+
+@*-----Slider -----*@
+<div class="carusel">
+     @foreach (var item in Model.lst_slider) // slidebg1
+      {
+        <div class="cs-slide">
+                <img src="@item.UrlAddress" class="cs-img" alt="">
+                <div class="cs-text">
+                    <h3 class="cs-tittle"><a href="@item.PageUrl">@item.Name</a></h3>
+                    <p class="cs-desc"><a href="@item.PageUrl">@item.Desc</a></p>
+                </div>
+        </div>
+      }
+</div>
+
+@*-----News -----*@
+<section>
+    <div class="main-size" style="margin: 50px auto">
+        <h2 class="section-tittle">
+            @WebSiteCkEditor.Resources.ClientLang.News
+        </h2>
+        <div class="global-cards">
+
+            @foreach (var item in Model.lst_newsv)
+            {
+                <div class="global-card">
+                    <div class="global-img">
+                        <img src="@item.PhotoUrl" alt="">
+                    </div>
+                    <div class="global-text">
+                        <p>
+                            @item.Title
+                        </p>
+                        <p>
+                            @item.RegDT.Value.ToString("dddd, MMMM d, yyyy") <br>
+                        </p>
+                        @if (item.ParentID == 0)
+                        {
+                            <a href="/@lang/News/@item.Id" class="btn">@WebSiteCkEditor.Resources.ClientLang.Moredetails</a>
+                        }
+                        else
+                        {
+                            <a href="/@lang/News/@item.ParentID" class="btn">@WebSiteCkEditor.Resources.ClientLang.Moredetails</a>
+                        }
+                    </div>
+                </div>
+            }
+
+           
+        </div>
+        <h4 class="section-tittle">
+            <a class="more" href="/@lang/allnews"> @WebSiteCkEditor.Resources.ClientLang.Allnews</a>
+        </h4>
+    </div>
+</section>
+
+@*-----ADS -----*@
+<section class="news-section">
+    <div class="main-size">
+        <h2 class="section-tittle">
+            @WebSiteCkEditor.Resources.ClientLang.ADS
+        </h2>
+        <div class="news-card">
+            @foreach (var item in Model.lst_newads)
+            {
+                <div class="news-block">
+                    <p>@item.RegDT.Value.ToString("MMM   dd")</p>
+                    <p>
+                        @if (item.ParentID == 0)
+                        {
+                            <a href="/@lang/AdsLearnMore/@item.Id">@item.Desc</a>
+                        }
+                        else
+                        {
+                            <a href="/@lang/AdsLearnMore/@item.ParentID">@item.Desc</a>
+                        }
+
+                    </p>
+                    </div>
+            }
+
+
+        </div>
+    </div>
+</section>
+@*----------*@
+
+<section>
+    <div class="main-size">
+        <h2 class="section-tittle">
+            Наши партнеры
+        </h2>
+        <div class="partners">
+            <div class="partners-block">
+                <a href="http://www.akorda.kz/ru"><img src="~/Scripts/1.0.0.0/img/partners/foot1.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="http://group-global.org/ru"><img src="~/Scripts/1.0.0.0/img/partners/foot2.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="https://e-history.kz/kz"><img src="~/Scripts/1.0.0.0/img/partners/foot3.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="http://www.fincenter.kz/kz/"><img src="~/Scripts/1.0.0.0/img/partners/foot4.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="https://ec.europa.eu/"><img src="~/Scripts/1.0.0.0/img/partners/foot5.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="http://edu.gov.kz/kz/"><img src="~/Scripts/1.0.0.0/img/partners/foot6.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="http://www.akorda.kz/ru"><img src="~/Scripts/1.0.0.0/img/partners/foot1.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="http://group-global.org/ru"><img src="~/Scripts/1.0.0.0/img/partners/foot2.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="https://e-history.kz/kz"><img src="~/Scripts/1.0.0.0/img/partners/foot3.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="http://www.fincenter.kz/kz/"><img src="~/Scripts/1.0.0.0/img/partners/foot4.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="https://ec.europa.eu/"><img src="~/Scripts/1.0.0.0/img/partners/foot5.png" alt=""></a>
+            </div>
+            <div class="partners-block">
+                <a href="http://edu.gov.kz/kz/"><img src="~/Scripts/1.0.0.0/img/partners/foot6.png" alt=""></a>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section style="padding: 20px 0; width:100%">
+    <iframe src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=42.3144882,69.5975211&amp;q=%D0%A2%D0%BE%D0%BA%D0%B0%D0%B5%D0%B2%D0%B0%2027%D0%B0+(silkway)&amp;ie=UTF8&amp;t=&amp;z=17&amp;iwloc=B&amp;output=embed" width="100%"
+            height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
